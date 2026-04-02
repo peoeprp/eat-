@@ -3,193 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eat!</title>
+  <title>Eat! - Доставка еды и кешбэк в ресторанах</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
 
   <header class="header">
     <div class="logo">
-      <img src="img/logo.png" alt="Logo" style="width: 12%; margin-left: 10%;">
+      <img src="img/logo.png" alt="Eat! Logo">
     </div>
-    <nav class="nav" id="mainNav" style="font-family: 'OnestBold';">
+    <nav class="nav" id="mainNav">
       <ul>
         <li><a href="#">Контакты</a></li>
         <li><a href="#">Скачать</a></li>
       </ul>
     </nav>
-
     <div class="burger" id="burgerMenu">&#9776;</div>
   </header>
 
-<section class="hero animate-on-scroll">
-  <div class="hero-content" style="border: none;">
-    <!-- Левая часть -->
-    <div class="hero-text-block">
-      <div class="hero-text-top">
-        <h1>Онлайн заказ и доставка еды
-<br>в Санкт-Петербурге. </h1>
-    <div class="button-wrapper-left">
-      <a class="button">Скачать мобильное приложение</a>
-    </div>
-
-      </div>
-
-      <div class="hero-info-grid">
-        <div class="info-box">
-          <p>Все скидки и акции от ресторанов<br>
-            <span class="highlight-small">в одном месте</span>
-          на сервисе Eat! <br>Зарабатывайте со вкусом</p>
-        </div> 
-        <div class="info-box">
-          <p>Приложение, которое объединило<span class="highlight-small"> лучшее</span> что есть в мире: еду, любовь <br>и деньги</p>
+  <main>
+    <!-- Hero секция -->
+    <section class="hero animate-on-scroll">
+      <div class="hero-content">
+        <div class="hero-text-block">
+          <div class="hero-text-top">
+            <h1>Онлайн заказ и доставка еды<br>в Санкт-Петербурге.</h1>
+            <div class="button-wrapper-left">
+              <a class="button">Скачать мобильное приложение</a>
+            </div>
+          </div>
+          <div class="hero-info-grid">
+            <div class="info-box">
+              <p>Все скидки и акции от ресторанов<br>
+                <span class="highlight-small">в одном месте</span>
+                на сервисе Eat!<br>Зарабатывайте со вкусом</p>
+            </div>
+            <div class="info-box">
+              <p>Приложение, которое объединило <span class="highlight-small">лучшее</span> что есть в мире: еду, любовь и деньги</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="img/img1.png" alt="Eat! приложение" loading="lazy">
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Правая часть -->
-    <div class="hero-image">
-      <img src="img/img1.png" alt="секция1" loading="lazy" style="width: 120%;">
-    </div>
-  </div>
-</section>
+    <h2><span class="hbold">Зарабатывайте</span> на посещениях ресторанов и заказе доставки. +10% от каждого заказа <br>на ваш счёт!</h2>
 
-
-  <h2> <span class="hbold">Зарабатывайте</span> на посещениях ресторанов и заказе доставки. +10% от каждого заказа <br>на ваш счёт!</h2>
-
-
-  <!-- Возможности -->
-<section class="you-can animate-on-scroll">
-  <h2 style="margin-left: 0px;">Как работает приложение ?</h2>
-
-  <div class="you-can-grid">
-    <div class="you-box">
-      <p>Вы делаете сканирование чека в ресторане</p>
-    </div>
-    <div class="you-box">
-      <p>Заказываете доставку <br>и<span class="hboldpink"> получаете нашу любовь</span> в виде внутренней валюты</p>
-    </div>
-    <div class="you-box">
-      <p>Копите баллы и оплачивайте ими до 40% счёта на доставку</p>
-    </div>
-    <div class="you-box">
-      <p>До 50% при заказе <br>в ресторанах приложения</p>
-    </div>
-  </div>
-
-  <div class="you-can-button">
-    <a href="https://www.figma.com/design/3ogjvSgHflKlBBGgX3G439/web?node-id=0-1&t=CYid6IpVxrPQM8Ic-1" class="button">Перейти к приложению</a>
-  </div>
-</section>
-
-<h2> Получайте <span class="hbold">дополнительные баллы</span> за репосты, опросы и многое другое!</h2>
-
-
-
-<section class="reviews-section animate-on-scroll">
-  <h2 style="margin-left: 3%;"> Более 80% пользователей <span class="hbold">довольны</span> использованием!</h2>
-
-  <div class="reviews-grid">
-
-    <!-- ОТЗЫВ 1 -->
-    <div class="review-card with-swirl">
-      <img src="img/rev1.png" alt="Марина" class="review-avatar">
-      <div class="review-content">
-        <h3>Марина</h3>
-        <div class="stars">★★★★★</div>
-        <p class="review-text">
-          Заказывали в Eat! ужин для всей семьи — остались в полном восторге. Доставка приехала даже раньше заявленного времени, всё было горячим и аккуратно упакованным. Блюда свежие, порции большие!
-        </p>
-        <button class="expand-btn">...</button>
+    <!-- Как работает -->
+    <section class="you-can animate-on-scroll">
+      <h2>Как работает приложение?</h2>
+      <div class="you-can-grid">
+        <div class="you-box">
+          <p>Вы делаете сканирование чека в ресторане</p>
+        </div>
+        <div class="you-box">
+          <p>Заказываете доставку <br>и <span class="hboldpink">получаете нашу любовь</span> в виде внутренней валюты</p>
+        </div>
+        <div class="you-box">
+          <p>Копите баллы и оплачивайте ими до 40% счёта на доставку</p>
+        </div>
+        <div class="you-box">
+          <p>До 50% при заказе <br>в ресторанах приложения</p>
+        </div>
       </div>
-    </div>
-
-        <!-- ОТЗЫВ 2 -->
-    <div class="review-card">
-      <img src="img/rev2.png" alt="Михаил" class="review-avatar">
-      <div class="review-content">
-        <h3>Михаил</h3>
-        <div class="stars">★★★★★</div>
-        <p class="review-text">
-          Eat! приятно удивили сервисом и скоростью. Оформление заказа заняло пару минут, менеджер быстро подтвердил заказ, а курьер был очень вежливым. Еда приехала в идеальном состоянии: ничего не протекло, всё красиво уложено.
-        </p>
-        <button class="expand-btn">...</button>
+      <div class="you-can-button">
+        <a href="https://www.figma.com/design/3ogjvSgHflKlBBGgX3G439/web?node-id=0-1&t=CYid6IpVxrPQM8Ic-1" class="button">Перейти к приложению</a>
       </div>
-    </div>
+    </section>
 
-    <!-- ОТЗЫВ 3 -->
-    <div class="review-card with-swirl">
-      <img src="img/rev3.png" alt="Лиза" class="review-avatar">
-      <div class="review-content">
-        <h3>Лиза</h3>
-        <div class="stars">★★★★★</div>
-        <p class="review-text">
-          Регулярно заказываю в Eat!, и каждый раз всё на уровне. Радует, что вкус остаётся неизменно отличным, а меню — разнообразным. Доставка без задержек, упаковка продуманная, всё сохраняет температуру.
-        </p>
-        <button class="expand-btn">...</button>
+    <h2>Получайте <span class="hbold">дополнительные баллы</span> за репосты, опросы и многое другое!</h2>
+
+    <!-- Отзывы -->
+    <section class="reviews-section animate-on-scroll">
+      <h2>Более 80% пользователей <span class="hbold">довольны</span> использованием!</h2>
+      <div class="reviews-grid">
+        <!-- Отзывы загружаются динамически из Supabase -->
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
-
-<section class="contact-section animate-on-scroll" style="
-    padding-bottom: 0px;
-">
-  <h2>Остались вопросы?</h2>
-
-  <div class="contact-container">
-    <form class="contact-form">
-      <input type="text" placeholder="Фамилия Имя" required />
-      <div class="row">
-        <input type="tel" placeholder="Телефон" required />
-        <input type="email" placeholder="E-mail" required />
+    <!-- Контакты -->
+    <section class="contact-section animate-on-scroll">
+      <h2>Остались вопросы?</h2>
+      <div class="contact-container">
+        <form class="contact-form">
+          <input type="text" placeholder="Фамилия Имя" required />
+          <div class="row">
+            <input type="tel" placeholder="Телефон" required />
+            <input type="email" placeholder="E-mail" required />
+          </div>
+          <textarea placeholder="Ваше сообщение" required></textarea>
+          <button type="button" class="submit-button">Отправить</button>
+        </form>
+        <div class="contact-image">
+          <img src="img/logo.png" alt="Eat! Logo" />
+        </div>
       </div>
-      <textarea placeholder="Ваше сообщение" required></textarea>
-      <a class="submit-button">Отправить</a>
+    </section>
 
-    </form>
-
-    <div class="contact-image">
-      <img src="img/logo.png" alt="Иллюстрация с книгой" />
-    </div>
-  </div>
-</section>
-<section class="community-block">
-  <h2>Хотите попробовать?</h2>
-
-  <div class="community-box animate-on-scroll">
-
-    <ul class="community-list">
-      <li>
-        <img src="img/check-circle.png" alt="check icon" />
-        <p>Скачайте приложение Eat!<br>За регистрацию в приложении мы дарим 300 баллов!</p>
-      </li>
-    </ul>
-    <div class="button-wrapper">
-      <a href="https://www.figma.com/design/3ogjvSgHflKlBBGgX3G439/web?node-id=0-1&t=CYid6IpVxrPQM8Ic-1" class="button">Скачать мобильное приложение</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- FOOTER -->
-<footer class="footer animate-on-scroll">
-  <div class="footer-wrapper">
-    <div class="footer-menu">
-      <a href="#" style="font-family: 'OnestBold';"> support@eat.ru</a>
-    </div>
-
-    <div class="footer-logo-wrapper">
-      <div class="footer-logo" id="footerLogo">
-        <img src="img/logo.png" alt=" Logo" id="logoDefault">
+    <!-- Попробовать -->
+    <section class="community-block">
+      <h2>Хотите попробовать?</h2>
+      <div class="community-box animate-on-scroll">
+        <ul class="community-list">
+          <li>
+            <img src="img/check-circle.png" alt="check icon" />
+            <p>Скачайте приложение Eat!<br>За регистрацию в приложении мы дарим 300 баллов!</p>
+          </li>
+        </ul>
+        <div class="button-wrapper">
+          <a class="button">Скачать мобильное приложение</a>
+        </div>
       </div>
-    </div>
+    </section>
+  </main>
 
-    <div class="footer-right" style="font-family: 'OnestBold';">@eat!</div>
-  </div>
-</footer>
-<script src="script.js"></script>
+  <footer class="footer animate-on-scroll">
+    <div class="footer-wrapper">
+      <div class="footer-menu">
+        <a href="mailto:support@eat.ru">support@eat.ru</a>
+      </div>
+      <div class="footer-logo-wrapper">
+        <div class="footer-logo" id="footerLogo">
+          <img src="img/logo.png" alt="Eat! Logo" id="logoDefault">
+        </div>
+      </div>
+      <div class="footer-right">@eat!</div>
+    </div>
+  </footer>
+
 </body>
-
 </html>
